@@ -7,7 +7,7 @@ top_sequence_numbers=50 #number of sequences per design run to extract
 min_unique=3 #minimum number of amino acid differences needed in order to be considered a unique sequence
 
 ### PATHS AND FILE NAMES ###
-paths = ['/Users/Michael_1/'] #paths to where files are located, in list form
+paths = ['./'] #paths to where files are located, in list form
 e_details_datafile = 'energydetails.txt' #name of file to analyze
 outfile_all_name = 'TopPeps_ALL.csv' #name of file containing best sequences for all designs; arbitrarily created at first path location in "paths"
 

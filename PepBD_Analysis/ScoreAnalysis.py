@@ -18,21 +18,6 @@ rmsd_file = 'rmsd.txt'
 out_file_1 = 'Score_Analysis_Results.csv'
 out_file_2 = 'BestPeps_EnergyBreakdown.csv'
 
-#analysis parameters
-E_cut = 0 #if energy above this value, then don't include in analysis
-
-#plot parameters
-
-tick_step = 10
-alpha=0.9
-cur_cycle = -1
-bin_width = 5
-colors = plt.get_cmap('Pastel1').colors
-linewidth=2
-legend_fontsize=12
-plt.style.use(os.path.join(home, 'Python/presentation.mplstyle')) #this is my custom format file
-colors=plt.colormaps['Set1'].colors
-
 #parameters used if calling function directly
 paths = ['/Users/Michael_1/']
 E_evolve_plot_flag = True #if True plot the evolution of PepBD score over course of design
@@ -42,6 +27,21 @@ score_hist_flag = True #if True, then plot histogram of best scores from each de
 score_hist_spline_fit_flag = True #if True, then fit spline to histogram
 E_evolve_decomp_plot_flag = True #if True, then also plot the evolution of components of PepBD score during design
 best_pep_flag = True #if True, then plot histogram of best scores over all designs
+
+#analysis parameters
+E_cut = 0 #if energy above this value, then don't include in analysis
+
+### STUFF BELOW HERE NORMALLY DOES NOT NEED TO BE CHANGED ###
+
+#plot parameters
+tick_step = 10
+alpha=0.9
+cur_cycle = -1
+bin_width = 5
+colors = plt.get_cmap('Pastel1').colors
+linewidth=2
+legend_fontsize=12
+colors=plt.colormaps['Set1'].colors
 
 def ScoreAnalysis(paths,
                   E_evolve_plot_flag=True, 

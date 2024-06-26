@@ -20,12 +20,13 @@ single_AA_plot = True #if True, then compare frequency of each amino acid
 pair_AA_plot = False #if True, then compare frequency of amino acid dimers
 
 # specify paths to amino acid frequency files, as well as names for the runs
-paths = ['/Users/Michael_1/']
-names = ['dummy']
+paths = ['./']
+names = ['PLACEHOLDER']
 num_names = len(names)
 
+#### STUFF BELOW HERE SHOULD NOT NORMALLY NEED TO BE CHANGED ####
+
 #plotting parameters
-plt.rcdefaults()
 bbox_loc = [0.5, -0.2]
 colors = plt.get_cmap('Pastel2').colors
 alpha=1

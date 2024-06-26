@@ -13,6 +13,24 @@ import os
 from pandas import read_csv
 #from itertools import product
 
+### inputs used to run function if this script is called directly ###
+plot_suffix='PepBD'
+paths = ['./']
+file = 'TopPeps.csv'
+hydration_single_run_flag = False #Change to true if you want the hydration profile for each run
+hydration_net_average_flag = True #If true, then average hydration properties over all runs and plot
+hydration_binary_flag = True #if true, then split amino acids into two categories: hydrophobic and hydrophilic
+
+### STUFF BELOW HERE NORMALLY DOES NOT NEED TO BE CHANGED ###
+
+#KEY: 1=hydrophobic, 2=hydrophilic, 3=positive, 4=negative, 5=glycine, 6=other
+type_labels_all=['Phobic', 'Philic', 'Pos', 'Neg', 'Gly', 'Other']
+type_labels_binary = ['Polar', 'Non-Polar']
+
+#plot parameters
+colors = plt.get_cmap('Set1').colors
+alpha=0.9
+
 #dictionary relating 3letter amino acid names to 1 letter amino acid names
 res_dict = {'ARG': 'R', "HIE": "H", "LYS" : "K", "ASP" : "D", "GLU" : "E",
             "SER" : "S", "THR": "T", "ASN" : "N", "GLN" : "Q", "CYS" : "C", 
@@ -35,23 +53,6 @@ res_masses = {'R' : 174, "H" : 155, "K" : 146, "D" : 133, "E" : 147,
               "S" : 105, "T" : 119,"N" : 132, "Q" : 146, "C" : 121, 
               "G" : 75, "P" : 115, "A" : 89, "I" : 131, "L" : 131,
               "M" : 149, "F" : 165, "W" : 204,  "Y": 181, "V": 117}
-
-### inputs used to run function if this script is called directly ###
-plot_suffix='PepBD'
-paths = ['/Users/Michael_1/']
-file = 'TopPeps.csv'
-hydration_single_run_flag = False #Change to true if you want the hydration profile for each run
-hydration_net_average_flag = True #If true, then average hydration properties over all runs and plot
-hydration_binary_flag = True #if true, then split amino acids into two categories: hydrophobic and hydrophilic
-
-#KEY: 1=hydrophobic, 2=hydrophilic, 3=positive, 4=negative, 5=glycine, 6=other
-type_labels_all=['Phobic', 'Philic', 'Pos', 'Neg', 'Gly', 'Other']
-type_labels_binary = ['Polar', 'Non-Polar']
-
-#plot parameters
-#plt.style.use('/Users/Michael_1/Python/presentation.mplstyle') #this is my custom format file
-colors = plt.get_cmap('Set1').colors
-alpha=0.9
 
 def read_pep_file(fullfile, file_type):
     try:

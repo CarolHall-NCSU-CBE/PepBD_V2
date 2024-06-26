@@ -10,6 +10,14 @@ import numpy as np
 import os
 import itertools
 
+### INPUTS USED IF CALLING THIS FUNCTION DIRECTLY ###
+path = './'
+seq_file = 'TopPeps.csv'
+seq_col = 'Seq'
+
+
+#### STUFF BELOW HERE SHOULD NOT NORMALLY NEED TO BE CHANGED ####
+
 res_dict = {'ARG': 'R', "HIE": "H", "LYS" : "K", "ASP" : "D", "GLU" : "E",
             "SER" : "S", "THR": "T", "ASN" : "N", "GLN" : "Q", "CYS" : "C", 
             "GLY" : "G", "PRO" : "P", "ALA" : "A", "ILE" : "I", "LEU" : "L",
@@ -21,11 +29,6 @@ res_masses = {'R' : 174, "H" : 155, "K" : 146, "D" : 133, "E" : 147,
               "S" : 105, "T" : 119,"N" : 132, "Q" : 146, "C" : 121, 
               "G" : 75, "P" : 115, "A" : 89, "I" : 131, "L" : 131,
               "M" : 149, "F" : 165, "W" : 204,  "Y": 181, "V": 117}
-
-### INPUTS USED IF CALLING THIS FUNCTION DIRECTLY ###
-path = '/Users/Michael_1/'
-seq_file = 'TopPeps.csv'
-seq_col = 'Seq'
 
 def TopPep_AA_Frequency(path, 
                         dirs=[''], 
